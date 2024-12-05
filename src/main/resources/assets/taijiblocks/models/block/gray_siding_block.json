@@ -1,0 +1,25 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"top_bottom": "taijiblocks:block/gray_siding_block_top_bottom",
+		"interior": "taijiblocks:block/gray_siding_block_interior",
+		"particle": "taijiblocks:block/gray_siding_block_exterior",
+		"exterior": "taijiblocks:block/gray_siding_block_exterior"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#exterior", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#exterior", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#interior", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#exterior", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top_bottom", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#top_bottom", "cullface": "down"}
+			}
+		}
+	],
+	"display": {}
+}

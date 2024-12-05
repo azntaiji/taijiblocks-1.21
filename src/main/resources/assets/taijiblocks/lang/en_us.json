@@ -1,4 +1,7 @@
 {
   "item.taijiblocks.pink_garnet": "Pink Garnet",
-  "item.taijiblocks.raw_pink_garnet": "Raw Pink Garnet"
+  "item.taijiblocks.raw_pink_garnet": "Raw Pink Garnet",
+  "block.taijiblocks.pink_garnet_block": "Block of Pink Garnet",
+  "block.taijiblocks.plushie_flamingo_block": "Flamingo Plushie",
+  "block.taijiblocks.gray_siding_block": "Gray Siding Block with White Interior Walls"
 }

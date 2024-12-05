@@ -15,37 +15,60 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    // TODO: =====ADD BLOCKS HERE=====
+    // TODO: ADD BLOCKS HERE
     // --- Pink Garnet Block
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
             new Block(AbstractBlock.Settings.create()
-                    // This is where you add block properties via methods! Use autocomplete to learn more, or hit shift twice then type in blocks to look at the blocks class.
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
                     .strength(4f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
             )
     );
 
-    // Create a method to "call" this class in TaijiBlocks so that everything gets intialized...
-    public static void registerModBlocks () {
-        TaijiBlocks.LOGGER.info("Registering mod blocks for " + TaijiBlocks.MOD_ID);
+    // --- Plushie Flamingo
+    public static final Block PLUSHIE_FLAMINGO_BLOCK = registerBlock("plushie_flamingo_block",
+            new Block(AbstractBlock.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque()
+            )
+    );    
 
-        // Add blocks to building blocks creative mode tab
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            // TODO: =====ADD BLOCKS HERE=====
-            entries.add(ModBlocks.PINK_GARNET_BLOCK);
-        });
-    }
+    // --- Gray Siding Block
+    public static final FacingBlock GRAY_SIDING_BLOCK = (FacingBlock) registerBlock("gray_siding_block",
+            new FacingBlock(Block.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.WOOD)
+            )
+    ); 
 
-    // Create a helper method to register block items
+    // Method to register block items
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TaijiBlocks.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
 
-    // Create a helper method to register blocks
+    // Method to register blocks
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TaijiBlocks.MOD_ID, name), block);
+    }
+
+    // Method to initialize block registration
+    public static void registerModBlocks () {
+        TaijiBlocks.LOGGER.info("Registering mod blocks for " + TaijiBlocks.MOD_ID);
+
+        // Add blocks to building blocks creative mode tab
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+            // TODO: ADD BLOCKS HERE
+            entries.add(ModBlocks.PINK_GARNET_BLOCK);
+            entries.add(ModBlocks.PLUSHIE_FLAMINGO_BLOCK);
+            entries.add(ModBlocks.GRAY_SIDING_BLOCK);
+        });
     }
 }
