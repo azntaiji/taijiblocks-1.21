@@ -37,6 +37,17 @@ public class ModBlocks {
             )
     );    
 
+    // --- Plushie Kirby Block
+    public static final Block PLUSHIE_KIRBY_BLOCK = registerBlock("plushie_kirby_block",
+            new Block(AbstractBlock.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque()
+            )
+    );    
+
     // --- Gray Siding Block
     public static final FacingBlock GRAY_SIDING_BLOCK = (FacingBlock) registerBlock("gray_siding_block",
             new FacingBlock(Block.Settings.create()
@@ -68,6 +79,7 @@ public class ModBlocks {
             // TODO: ADD BLOCKS HERE
             entries.add(ModBlocks.PINK_GARNET_BLOCK);
             entries.add(ModBlocks.PLUSHIE_FLAMINGO_BLOCK);
+            entries.add(ModBlocks.PLUSHIE_KIRBY_BLOCK);
             entries.add(ModBlocks.GRAY_SIDING_BLOCK);
         });
     }
