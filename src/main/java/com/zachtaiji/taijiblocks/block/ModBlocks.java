@@ -26,7 +26,7 @@ public class ModBlocks {
             )
     );
 
-    // --- Plushie Flamingo
+    // --- Plushie Flamingo Block
     public static final Block PLUSHIE_FLAMINGO_BLOCK = registerBlock("plushie_flamingo_block",
             new Block(AbstractBlock.Settings.create()
                     // This is where you add block properties via methods! Use autocomplete to learn more.
@@ -58,6 +58,50 @@ public class ModBlocks {
             )
     ); 
 
+    // --- Plushie Jigglypuff Block
+    public static final FacingBlock PLUSHIE_JIGGLYPUFF_BLOCK = (FacingBlock) registerBlock("plushie_jigglypuff_block",
+            new FacingBlock(Block.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque()
+            )
+    ); 
+
+    // --- Four Way Street Sign Block
+    public static final Block STREET_SIGN_FOUR_WAY_BLOCK = registerBlock("street_sign_four_way_block",
+            new Block(AbstractBlock.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.METAL)
+                    .nonOpaque()
+            )
+    ); 
+
+    // --- North South Street Sign Block
+    public static final Block STREET_SIGN_NORTH_SOUTH_BLOCK = registerBlock("street_sign_north_south_block",
+            new Block(AbstractBlock.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.METAL)
+                    .nonOpaque()
+            )
+    ); 
+
+    // --- East West Street Sign Block
+    public static final Block STREET_SIGN_EAST_WEST_BLOCK = registerBlock("street_sign_east_west_block",
+            new Block(AbstractBlock.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.METAL)
+                    .nonOpaque()
+            )
+    ); 
+
     // Method to register block items
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TaijiBlocks.MOD_ID, name),
@@ -81,6 +125,10 @@ public class ModBlocks {
             entries.add(ModBlocks.PLUSHIE_FLAMINGO_BLOCK);
             entries.add(ModBlocks.PLUSHIE_KIRBY_BLOCK);
             entries.add(ModBlocks.GRAY_SIDING_BLOCK);
+            entries.add(ModBlocks.PLUSHIE_JIGGLYPUFF_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_FOUR_WAY_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_NORTH_SOUTH_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_EAST_WEST_BLOCK);
         });
     }
 }

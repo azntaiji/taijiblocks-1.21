@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "taijiblocks:block/street_sign_north_south_block"
+    }
+  }
+}

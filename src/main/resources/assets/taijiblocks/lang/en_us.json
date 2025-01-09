@@ -4,5 +4,11 @@
   "block.taijiblocks.pink_garnet_block": "Block of Pink Garnet",
   "block.taijiblocks.plushie_flamingo_block": "Flamingo Plushie",
   "block.taijiblocks.gray_siding_block": "Gray Siding Block with White Interior Walls",
-  "block.taijiblocks.plushie_kirby_block": "Kirby Plushie"
+  "block.taijiblocks.plushie_kirby_block": "Kirby Plushie",
+  "block.taijiblocks.plushie_jigglypuff_block": "Jigglypuff Plushie",
+  "block.taijiblocks.street_sign_four_way_block": "Four Way Street Sign",
+  "block.taijiblocks.street_sign_north_south_block": "North South Street Sign",
+  "block.taijiblocks.street_sign_east_west_block": "East West Street Sign",
+  "item.taijiblocks.baby_bottle": "Baby Bottle",
+  "itemGroup.taiji_blocks_group": "Taijiblocks"
 }
