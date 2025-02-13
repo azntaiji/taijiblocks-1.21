@@ -3,7 +3,7 @@
 	"textures": {
 		"1": "taijiblocks:block/street_sign_post",
 		"3": "taijiblocks:block/street_sign_east_west",
-		"particle": "block/street_sign_base"
+		"particle": "taijiblocks:block/street_sign_east_west"
 	},
 	"elements": [
 		{

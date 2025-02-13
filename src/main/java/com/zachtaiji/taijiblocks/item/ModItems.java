@@ -27,8 +27,7 @@ public class ModItems {
             .build();
 
     // TODO: =====ADD ITEMS HERE=====
-    public static final Item PINK_GARNET = registerItem("pink_garnet", new Item(new Item.Settings()));
-    public static final Item RAW_PINK_GARNET = registerItem("raw_pink_garnet", new Item(new Item.Settings()));
+
     public static final Item BABY_BOTTLE = registerItem("baby_bottle", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(1).saturationModifier(0.1f).build())));
 
     // Create a method to "call" this class in TaijiBlocks so that everything gets intialized...
@@ -38,13 +37,6 @@ public class ModItems {
         Registry.register(Registries.ITEM_GROUP, TAIJIBLOCKS_GROUP, CUSTOM_ITEM_GROUP);
 
         TaijiBlocks.LOGGER.info("Registering Mod Items for " + TaijiBlocks.MOD_ID);
-
-        // Add items to ingredients creative mode tab
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            // TODO: =====ADD ITEMS HERE=====
-            entries.add(PINK_GARNET);
-            entries.add(RAW_PINK_GARNET);
-        });
 
         // Register items to the custom item group.
         ItemGroupEvents.modifyEntriesEvent(TAIJIBLOCKS_GROUP).register(itemGroup -> {

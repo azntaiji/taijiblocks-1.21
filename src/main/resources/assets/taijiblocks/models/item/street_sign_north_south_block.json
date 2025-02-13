@@ -1,3 +1,6 @@
 {
-    "parent": "taijiblocks:block/street_sign_north_south_block"
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "taijiblocks:item/street_sign_north_south"
+      }
 }

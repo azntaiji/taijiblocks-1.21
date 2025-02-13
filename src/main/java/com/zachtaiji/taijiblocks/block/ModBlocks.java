@@ -2,29 +2,27 @@ package com.zachtaiji.taijiblocks.block;
 
 // Import libraries and classes
 import com.zachtaiji.taijiblocks.TaijiBlocks;
+import com.zachtaiji.taijiblocks.item.ModItems;
+
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
     // TODO: ADD BLOCKS HERE
-    // --- Pink Garnet Block
-    public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
-            new Block(AbstractBlock.Settings.create()
-                    // This is where you add block properties via methods! Use autocomplete to learn more.
-                    .strength(4f)
-                    .requiresTool()
-                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
-            )
-    );
 
     // --- Plushie Flamingo Block
     public static final Block PLUSHIE_FLAMINGO_BLOCK = registerBlock("plushie_flamingo_block",
@@ -102,6 +100,31 @@ public class ModBlocks {
             )
     ); 
 
+    public static final RegistryKey<ItemGroup> TAIJIBLOCKS_GROUP = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(TaijiBlocks.MOD_ID, "item_group"));
+    public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.BABY_BOTTLE))
+            .displayName(Text.translatable("itemGroup.taiji_blocks_group"))
+            .build();
+
+    // Method to initialize block registration
+    public static void registerModBlocks () {
+
+        TaijiBlocks.LOGGER.info("Registering mod blocks for " + TaijiBlocks.MOD_ID);
+
+        // Add blocks to building blocks creative mode tab
+        ItemGroupEvents.modifyEntriesEvent(TAIJIBLOCKS_GROUP).register(entries -> {
+            // TODO: ADD BLOCKS HERE
+            entries.add(ModBlocks.PLUSHIE_FLAMINGO_BLOCK);
+            entries.add(ModBlocks.PLUSHIE_KIRBY_BLOCK);
+            entries.add(ModBlocks.GRAY_SIDING_BLOCK);
+            entries.add(ModBlocks.PLUSHIE_JIGGLYPUFF_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_FOUR_WAY_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_NORTH_SOUTH_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_EAST_WEST_BLOCK);
+        });
+
+    }
+
     // Method to register block items
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(TaijiBlocks.MOD_ID, name),
@@ -112,23 +135,5 @@ public class ModBlocks {
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TaijiBlocks.MOD_ID, name), block);
-    }
-
-    // Method to initialize block registration
-    public static void registerModBlocks () {
-        TaijiBlocks.LOGGER.info("Registering mod blocks for " + TaijiBlocks.MOD_ID);
-
-        // Add blocks to building blocks creative mode tab
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            // TODO: ADD BLOCKS HERE
-            entries.add(ModBlocks.PINK_GARNET_BLOCK);
-            entries.add(ModBlocks.PLUSHIE_FLAMINGO_BLOCK);
-            entries.add(ModBlocks.PLUSHIE_KIRBY_BLOCK);
-            entries.add(ModBlocks.GRAY_SIDING_BLOCK);
-            entries.add(ModBlocks.PLUSHIE_JIGGLYPUFF_BLOCK);
-            entries.add(ModBlocks.STREET_SIGN_FOUR_WAY_BLOCK);
-            entries.add(ModBlocks.STREET_SIGN_NORTH_SOUTH_BLOCK);
-            entries.add(ModBlocks.STREET_SIGN_EAST_WEST_BLOCK);
-        });
     }
 }
