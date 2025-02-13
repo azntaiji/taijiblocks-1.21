@@ -68,8 +68,8 @@ public class ModBlocks {
     ); 
 
     // --- Four Way Street Sign Block
-    public static final Block STREET_SIGN_FOUR_WAY_BLOCK = registerBlock("street_sign_four_way_block",
-            new Block(AbstractBlock.Settings.create()
+    public static final TallBlock STREET_SIGN_FOUR_WAY_BLOCK = (TallBlock) registerBlock("street_sign_four_way_block",
+            new TallBlock(Block.Settings.create()
                     // This is where you add block properties via methods! Use autocomplete to learn more.
                     .strength(4f)
                     .requiresTool()
@@ -79,8 +79,8 @@ public class ModBlocks {
     ); 
 
     // --- North South Street Sign Block
-    public static final Block STREET_SIGN_NORTH_SOUTH_BLOCK = registerBlock("street_sign_north_south_block",
-            new Block(AbstractBlock.Settings.create()
+    public static final TallBlock STREET_SIGN_NORTH_SOUTH_BLOCK = (TallBlock) registerBlock("street_sign_north_south_block",
+            new TallBlock(Block.Settings.create()
                     // This is where you add block properties via methods! Use autocomplete to learn more.
                     .strength(4f)
                     .requiresTool()
@@ -90,8 +90,19 @@ public class ModBlocks {
     ); 
 
     // --- East West Street Sign Block
-    public static final Block STREET_SIGN_EAST_WEST_BLOCK = registerBlock("street_sign_east_west_block",
-            new Block(AbstractBlock.Settings.create()
+    public static final TallBlock STREET_SIGN_EAST_WEST_BLOCK = (TallBlock) registerBlock("street_sign_east_west_block",
+            new TallBlock(Block.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.METAL)
+                    .nonOpaque()
+            )
+    ); 
+
+    // --- Stop Sign Block
+    public static final TallFacingBlock STREET_SIGN_STOP_BLOCK = (TallFacingBlock) registerBlock("street_sign_stop_block",
+    new TallFacingBlock(Block.Settings.create()
                     // This is where you add block properties via methods! Use autocomplete to learn more.
                     .strength(4f)
                     .requiresTool()
@@ -121,6 +132,7 @@ public class ModBlocks {
             entries.add(ModBlocks.STREET_SIGN_FOUR_WAY_BLOCK);
             entries.add(ModBlocks.STREET_SIGN_NORTH_SOUTH_BLOCK);
             entries.add(ModBlocks.STREET_SIGN_EAST_WEST_BLOCK);
+            entries.add(ModBlocks.STREET_SIGN_STOP_BLOCK);
         });
 
     }
