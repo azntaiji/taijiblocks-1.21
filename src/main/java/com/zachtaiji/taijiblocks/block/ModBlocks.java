@@ -25,26 +25,26 @@ public class ModBlocks {
     // TODO: ADD BLOCKS HERE
 
     // --- Plushie Flamingo Block
-    public static final Block PLUSHIE_FLAMINGO_BLOCK = registerBlock("plushie_flamingo_block",
-            new Block(AbstractBlock.Settings.create()
+    public static final FacingBlock PLUSHIE_FLAMINGO_BLOCK = (FacingBlock) registerBlock("plushie_flamingo_block",
+            new FacingBlock(Block.Settings.create()
                     // This is where you add block properties via methods! Use autocomplete to learn more.
                     .strength(4f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.WOOL)
                     .nonOpaque()
             )
-    );    
+    ); 
 
-    // --- Plushie Kirby Block
-    public static final Block PLUSHIE_KIRBY_BLOCK = registerBlock("plushie_kirby_block",
-            new Block(AbstractBlock.Settings.create()
+    // --- Plushie Kirby Block  
+    public static final FacingBlock PLUSHIE_KIRBY_BLOCK = (FacingBlock) registerBlock("plushie_kirby_block",
+            new FacingBlock(Block.Settings.create()
                     // This is where you add block properties via methods! Use autocomplete to learn more.
                     .strength(4f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.WOOL)
                     .nonOpaque()
             )
-    );    
+    ); 
 
     // --- Gray Siding Block
     public static final FacingBlock GRAY_SIDING_BLOCK = (FacingBlock) registerBlock("gray_siding_block",
