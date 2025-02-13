@@ -111,6 +111,17 @@ public class ModBlocks {
             )
     ); 
 
+    // --- Mirror Block
+    public static final ThinFacingBlock MIRROR_BLOCK = (ThinFacingBlock) registerBlock("mirror_block",
+    new ThinFacingBlock(Block.Settings.create()
+                    // This is where you add block properties via methods! Use autocomplete to learn more.
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.WOOD)
+                    .nonOpaque()
+            )
+    ); 
+
     public static final RegistryKey<ItemGroup> TAIJIBLOCKS_GROUP = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(TaijiBlocks.MOD_ID, "item_group"));
     public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.BABY_BOTTLE))
@@ -133,6 +144,7 @@ public class ModBlocks {
             entries.add(ModBlocks.STREET_SIGN_NORTH_SOUTH_BLOCK);
             entries.add(ModBlocks.STREET_SIGN_EAST_WEST_BLOCK);
             entries.add(ModBlocks.STREET_SIGN_STOP_BLOCK);
+            entries.add(ModBlocks.MIRROR_BLOCK);
         });
 
     }
