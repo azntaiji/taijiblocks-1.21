@@ -9,5 +9,7 @@
   "block.taijiblocks.street_sign_stop_block": "Stop Sign",
   "item.taijiblocks.baby_bottle": "Baby Bottle",
   "block.taijiblocks.mirror_block": "Mirror",
-  "itemGroup.taiji_blocks_group": "Taijiblocks"
+  "itemGroup.taiji_blocks_group": "Taijiblocks",
+  "entity.taijiblocks.flamingo": "Flamingo",
+  "item.taijiblocks.flamingo_spawn_egg": "Flamingo Spawn Egg"
 }

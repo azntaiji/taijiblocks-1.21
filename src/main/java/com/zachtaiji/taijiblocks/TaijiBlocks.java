@@ -1,6 +1,7 @@
 package com.zachtaiji.taijiblocks;
 
 import com.zachtaiji.taijiblocks.block.ModBlocks;
+import com.zachtaiji.taijiblocks.entity.ModEntities;
 import com.zachtaiji.taijiblocks.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,8 +24,9 @@ public class TaijiBlocks implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
-		// Run methods to register items and blocks
+		// Run methods to register items, blocks, and entities
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModEntities.registerModEntities();
 	}
 }

@@ -2,6 +2,7 @@ package com.zachtaiji.taijiblocks.item;
 
 // This is where you import classes and libraries
 import com.zachtaiji.taijiblocks.TaijiBlocks;
+import com.zachtaiji.taijiblocks.entity.ModEntities;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -10,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -30,6 +32,9 @@ public class ModItems {
 
     public static final Item BABY_BOTTLE = registerItem("baby_bottle", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(1).saturationModifier(0.1f).build())));
 
+    public static final Item FLAMINGO_SPAWN_EGG = registerItem("flamingo_spawn_egg",
+            new SpawnEggItem(ModEntities.FLAMINGO, 0xFF698C, 0xDC506E, new Item.Settings()));
+
     // Create a method to "call" this class in TaijiBlocks so that everything gets intialized...
     public static void registerModItems () {
         
@@ -42,6 +47,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(TAIJIBLOCKS_GROUP).register(itemGroup -> {
             // TODO: =====ADD ITEMS HERE=====
             itemGroup.add(ModItems.BABY_BOTTLE);
+            itemGroup.add(ModItems.FLAMINGO_SPAWN_EGG);
         });
 
     }
